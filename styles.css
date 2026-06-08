@@ -265,6 +265,59 @@ section[id]{scroll-margin-top:76px}
 .footer-nav a:hover{color:var(--gold)}
 .footer-meta{font-size:.8rem;color:#647688;line-height:1.7;text-align:right}
 
+/* ---------- experience / R&D directory ---------- */
+.exp-lead{margin-bottom:42px}
+.exp-numbers{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:48px}
+.exp-cell{padding:34px 22px;border-right:1px solid var(--line)}
+.exp-cell:last-child{border-right:0}
+.exp-n{display:block;font-family:var(--display);font-weight:600;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;color:var(--navy);letter-spacing:-.01em}
+.exp-plus{color:var(--bronze)}
+.exp-lab{display:block;margin-top:12px;font-size:.85rem;color:var(--navy-soft);max-width:22ch}
+
+.exp-kicker{font-family:var(--body);text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700;color:var(--bronze);text-align:center;margin-bottom:22px}
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;width:max-content;animation:exp-scroll 60s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes exp-scroll{to{transform:translateX(-50%)}}
+.chip{font-family:var(--display);font-weight:500;font-size:1.12rem;color:var(--navy);padding:0 30px;white-space:nowrap;opacity:.8;border-right:1px solid var(--line);display:flex;align-items:center;height:54px}
+
+.exp-dir-head{margin-top:60px}
+.exp-dir-head h3{font-family:var(--display);font-weight:600;font-size:clamp(1.4rem,2.4vw,2rem);color:var(--navy)}
+.exp-dir-head p{color:var(--navy-soft);font-size:.95rem;margin-top:8px}
+.exp-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:26px 0 6px}
+.exp-filters{display:flex;flex-wrap:wrap;gap:8px}
+.exp-filter{font-family:var(--body);font-size:.86rem;border:1px solid var(--line);background:var(--paper);color:var(--navy-soft);padding:9px 16px;border-radius:999px;cursor:pointer;transition:.18s}
+.exp-filter:hover{border-color:var(--bronze);color:var(--navy)}
+.exp-filter[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.exp-filter .c{opacity:.55;margin-left:6px;font-variant-numeric:tabular-nums}
+.exp-filter[aria-pressed="true"] .c{opacity:.75}
+.exp-search{margin-left:auto}
+.exp-search input{font-family:var(--body);font-size:.9rem;padding:10px 16px;border:1px solid var(--line);border-radius:999px;width:240px;outline:none;background:var(--paper-2);color:var(--navy)}
+.exp-search input:focus{border-color:var(--bronze)}
+.exp-count{font-size:.8rem;color:var(--navy-soft);margin:18px 0 22px}
+.exp-count b{color:var(--navy);font-weight:600}
+.exp-group h4{font-family:var(--body);font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);padding-bottom:12px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;margin:0 0 4px}
+.exp-group h4 .gc{color:var(--navy-soft);font-weight:500;letter-spacing:.04em}
+.orgs{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px;margin:4px 0 38px}
+.orgs li{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:11px 2px;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--navy)}
+.orgs li .loc{font-size:.72rem;color:var(--navy-soft);white-space:nowrap}
+.exp-empty{display:none;color:var(--navy-soft);padding:40px 0}
+.exp-note{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:22px 24px;margin-top:36px;font-size:.85rem;color:var(--navy-soft);max-width:80ch}
+.exp-note strong{color:var(--navy)}
+@media(max-width:820px){.orgs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+  .exp-numbers{grid-template-columns:repeat(2,1fr)}
+  .exp-cell:nth-child(2){border-right:0}
+  .exp-cell:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media(max-width:560px){
+  .orgs{grid-template-columns:1fr}
+  .exp-search{margin-left:0;width:100%}
+  .exp-search input{width:100%}
+}
+
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
