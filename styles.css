@@ -1,5 +1,5 @@
 /* ============================================================
-   KALIPER — premium architectural infrastructure brand
+   KALIPER, premium architectural infrastructure brand
    Part of the founder family: deep navy + warm stone + bronze.
    Display: Fraunces (serif).  Body: Inter.
    ============================================================ */
@@ -29,6 +29,20 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
+
+/* ---------- accessibility ---------- */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--navy);color:#fff;
+  padding:12px 18px;font-family:var(--body);font-weight:600;text-decoration:none;border-radius:0 0 3px 0}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px;border-radius:1px}
+.contact-fineprint{margin-top:16px;color:#8fa1b2;font-size:.78rem}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .track{animation:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   font-family:var(--body);
@@ -65,8 +79,8 @@ section[id]{scroll-margin-top:76px}
 .btn-solid:hover{background:var(--bronze-deep);border-color:var(--bronze-deep);transform:translateY(-1px)}
 .btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}
 .btn-ghost:hover{border-color:var(--bronze);color:var(--bronze)}
-.hero .btn-ghost,.section-dark .btn-ghost,.section-contact .btn-ghost,.founder .btn-ghost{color:#f3f6f9;border-color:rgba(255,255,255,.55)}
-.hero .btn-ghost:hover,.section-dark .btn-ghost:hover,.section-contact .btn-ghost:hover,.founder .btn-ghost:hover{color:var(--navy-deep);background:var(--gold);border-color:var(--gold)}
+.hero .btn-ghost,.section-dark .btn-ghost,.section-contact .btn-ghost{color:#f3f6f9;border-color:rgba(255,255,255,.55)}
+.hero .btn-ghost:hover,.section-dark .btn-ghost:hover,.section-contact .btn-ghost:hover{color:var(--navy-deep);background:var(--gold);border-color:var(--gold)}
 
 /* ---------- header ---------- */
 .site-header{
@@ -211,6 +225,11 @@ section[id]{scroll-margin-top:76px}
 .work-sub{font-family:var(--body);text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;font-weight:700;color:var(--gold);margin:38px 0 16px}
 .diagram-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .diagram-row img{width:100%;height:clamp(200px,26vw,320px);object-fit:contain;background:#f4f2ec;border-radius:3px;padding:16px}
+.engagements{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,32px);margin-bottom:8px}
+.engagement{border-top:2px solid var(--gold);padding-top:20px}
+.engagement h3{font-family:var(--display);font-weight:600;font-size:1.15rem;color:#fff;margin-bottom:10px;line-height:1.2}
+.engagement p{color:#a9b8c6;font-size:.96rem}
+@media(max-width:760px){.engagements{grid-template-columns:1fr}}
 
 /* ---------- founder ---------- */
 .founder-body{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,5vw,64px);align-items:start}
@@ -264,6 +283,8 @@ section[id]{scroll-margin-top:76px}
 .footer-nav a{font-family:var(--body);font-size:.86rem;font-weight:500;color:#aebccb}
 .footer-nav a:hover{color:var(--gold)}
 .footer-meta{font-size:.8rem;color:#647688;line-height:1.7;text-align:right}
+.footer-meta a{color:#aebccb;border-bottom:1px solid var(--line-dark)}
+.footer-meta a:hover{color:var(--gold)}
 
 /* ---------- experience / R&D directory ---------- */
 .exp-lead{margin-bottom:42px}

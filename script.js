@@ -1,4 +1,4 @@
-// Kaliper — minimal interactions
+// Kaliper: minimal interactions
 (function () {
   var header = document.querySelector('.site-header');
   var toggle = document.querySelector('.nav-toggle');
@@ -168,7 +168,7 @@
     if (c) c.textContent = (cat === "all") ? total : (counts[cat] || 0);
   });
 
-  // marquee (duplicated for a seamless loop)
+  // marquee (duplicated for a continuous loop)
   var track = document.getElementById("expTrack");
   if (track) {
     var one = MARQUEE.map(function (n) { return '<span class="chip">' + esc(n) + '</span>'; }).join("");
