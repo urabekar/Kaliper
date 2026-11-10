@@ -278,7 +278,7 @@ section[id]{scroll-margin-top:76px}
 /* ---------- footer ---------- */
 .site-footer{background:#0a1824;color:#aebccb;padding:60px var(--pad)}
 .footer-inner{max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
-.footer-logo{height:22px}
+.footer-logo{height:22px;width:auto}
 .footer-nav{display:flex;flex-wrap:wrap;gap:20px}
 .footer-nav a{font-family:var(--body);font-size:.86rem;font-weight:500;color:#aebccb}
 .footer-nav a:hover{color:var(--gold)}

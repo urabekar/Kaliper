@@ -13,6 +13,7 @@ A single-page, static site (HTML/CSS/JS) for Kaliper. No build step, no dependen
 - `index.html` — all content/sections.
 - `styles.css` — design system.
 - `script.js` — sticky header, mobile nav, scroll reveal.
+- `_config.yml`: keeps this README out of the published site.
 - `assets/` — monochrome Kaliper logo (svg + png, black + white).
 
 ## Before going live — to do
