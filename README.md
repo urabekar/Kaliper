@@ -10,11 +10,11 @@ A single-page, static site (HTML/CSS/JS) for Kaliper. No build step, no dependen
 - **Naming:** only the founder's own track record and honors are named. Developer partners, pharma/biotech clients, and specific current projects are described generically.
 
 ## Files
-- `index.html` — all content/sections.
+- `index.html`: all content and sections, including the full organization list (edit the list here).
 - `styles.css` — design system.
-- `script.js` — sticky header, mobile nav, scroll reveal.
+- `script.js`: sticky header, mobile nav, scroll reveal, and the filter and search for the organization list.
 - `_config.yml`: keeps this README out of the published site.
-- `assets/` — monochrome Kaliper logo (svg + png, black + white).
+- `assets/`: logos, photos (each photo has a `.jpg` original and smaller `.webp` copies that the page loads), and `assets/fonts/` (self-hosted Inter and Lora).
 
 ## Before going live — to do
 1. **Photos (done):** the founder portrait (`assets/amrit-headshot.jpg`) and a facility band (`assets/lab-space.jpg`) are pulled from the personal-site image library and already placed in the Leadership section. Swap for higher-res or alternate shots anytime.
@@ -27,5 +27,5 @@ A single-page, static site (HTML/CSS/JS) for Kaliper. No build step, no dependen
 5. **Stats:** the bar reflects the founder's verified career record (single, non-overlapping scope). A separate, clearly labeled leadership-team stat block can be added if you want to show firm-wide scale.
 
 ## Notes
-- Fonts (Archivo, Inter) load from Google Fonts; needs internet at view time. Can be self-hosted if you prefer fully offline.
+- Fonts (Lora, Inter) are self-hosted in `assets/fonts/`. Nothing loads from Google Fonts.
 - Fully responsive (desktop / tablet / mobile).

@@ -19,9 +19,8 @@
 <meta name="twitter:image" content="https://www.kaliperco.com/assets/hero-facility.jpg" />
 <meta name="twitter:image:alt" content="Enterprise-grade laboratory infrastructure" />
 <meta name="theme-color" content="#102433" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/lora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="styles.css" />
 <script type="application/ld+json">
 {
@@ -143,13 +142,10 @@
       <img src="assets/logo-white.svg" width="108" height="23" alt="Kaliper" class="brand-logo" />
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#approach">Approach</a>
       <a href="#sectors">Sectors</a>
       <a href="#services">Services</a>
-      <a href="#difference">Why Kaliper</a>
       <a href="#work">Work</a>
       <a href="#founder">Leadership</a>
-      <a href="#experience">Experience</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </nav>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
@@ -162,6 +158,10 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+  <picture class="hero-bg" aria-hidden="true">
+    <source type="image/webp" srcset="assets/hero-facility-800.webp 800w, assets/hero-facility-1500.webp 1500w" sizes="100vw" />
+    <img src="assets/hero-facility.jpg" width="1500" height="1000" fetchpriority="high" alt="" />
+  </picture>
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="eyebrow">Mission-Critical Infrastructure</p>
@@ -250,37 +250,61 @@
     <h2 class="section-title">Built for the most demanding environments.</h2>
   </div>
   <div class="sectors-grid">
-    <article class="sector" style="background-image:url('assets/sector-labs.jpg')">
+    <article class="sector">
+      <picture class="sector-bg" aria-hidden="true">
+        <source type="image/webp" srcset="assets/sector-labs-693.webp 693w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 360px" />
+        <img src="assets/sector-labs.jpg" width="693" height="539" loading="lazy" decoding="async" alt="" />
+      </picture>
       <div class="sector-body">
         <h3>Laboratories &amp; R&amp;D</h3>
         <p>Flexible, enterprise-grade research environments engineered to accelerate discovery, built to reconfigure, not rebuild.</p>
       </div>
     </article>
-    <article class="sector" style="background-image:url('assets/sector-biomfg.jpg')">
+    <article class="sector">
+      <picture class="sector-bg" aria-hidden="true">
+        <source type="image/webp" srcset="assets/sector-biomfg-427.webp 427w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 360px" />
+        <img src="assets/sector-biomfg.jpg" width="427" height="640" loading="lazy" decoding="async" alt="" />
+      </picture>
       <div class="sector-body">
         <h3>Bio-Manufacturing &amp; cGMP</h3>
         <p>Process, cleanroom, and regulated manufacturing infrastructure designed around real production workflows and compliance.</p>
       </div>
     </article>
-    <article class="sector" style="background-image:url('assets/sector-clinical.jpg')">
+    <article class="sector">
+      <picture class="sector-bg" aria-hidden="true">
+        <source type="image/webp" srcset="assets/sector-clinical-480.webp 480w, assets/sector-clinical-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 360px" />
+        <img src="assets/sector-clinical.jpg" width="1500" height="1000" loading="lazy" decoding="async" alt="" />
+      </picture>
       <div class="sector-body">
         <h3>Healthcare &amp; Clinical</h3>
         <p>Clinical, diagnostic, and care-delivery facilities with the accreditation, compliance, and operational rigor they demand.</p>
       </div>
     </article>
-    <article class="sector" style="background-image:url('assets/sector-data.jpg')">
+    <article class="sector">
+      <picture class="sector-bg" aria-hidden="true">
+        <source type="image/webp" srcset="assets/sector-data-480.webp 480w, assets/sector-data-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 360px" />
+        <img src="assets/sector-data.jpg" width="2000" height="1125" loading="lazy" decoding="async" alt="" />
+      </picture>
       <div class="sector-body">
         <h3>Data Centers &amp; AI Compute</h3>
         <p>High-density, resilient compute infrastructure with the redundancy and power strategy modern AI workloads require.</p>
       </div>
     </article>
-    <article class="sector" style="background-image:url('assets/sector-industrial.jpg')">
+    <article class="sector">
+      <picture class="sector-bg" aria-hidden="true">
+        <source type="image/webp" srcset="assets/sector-industrial-656.webp 656w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 360px" />
+        <img src="assets/sector-industrial.jpg" width="656" height="518" loading="lazy" decoding="async" alt="" />
+      </picture>
       <div class="sector-body">
         <h3>Advanced Industrial</h3>
         <p>Specialized industrial and technical facilities, including adaptive reuse of legacy assets into high-value space.</p>
       </div>
     </article>
-    <article class="sector" style="background-image:url('assets/sector-realestate.jpg')">
+    <article class="sector">
+      <picture class="sector-bg" aria-hidden="true">
+        <source type="image/webp" srcset="assets/sector-realestate-480.webp 480w, assets/sector-realestate-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 360px" />
+        <img src="assets/sector-realestate.jpg" width="960" height="640" loading="lazy" decoding="async" alt="" />
+      </picture>
       <div class="sector-body">
         <h3>Operated Real Estate</h3>
         <p>Residential, hospitality, and co-working operating models: the fractional-access businesses we've built and run for years.</p>
@@ -391,19 +415,31 @@
 
   <div class="work-grid">
     <article class="work-card">
-      <img src="assets/work-40guest.jpg" width="512" height="640" loading="lazy" alt="SmartLabs at 40 Guest Street, Boston: lab corridor" />
+      <picture>
+        <source type="image/webp" srcset="assets/work-40guest-512.webp 512w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 280px" />
+        <img src="assets/work-40guest.jpg" width="512" height="640" loading="lazy" decoding="async" alt="SmartLabs at 40 Guest Street, Boston: lab corridor" />
+      </picture>
       <div class="work-meta"><h3>40 Guest Street</h3><p class="work-fact">Boston, MA · 84,000 sf</p></div>
     </article>
     <article class="work-card">
-      <img src="assets/work-21erie.jpg" width="960" height="640" loading="lazy" alt="SmartLabs at 21 Erie Street, Cambridge: modular lab benching" />
+      <picture>
+        <source type="image/webp" srcset="assets/work-21erie-640.webp 640w, assets/work-21erie-960.webp 960w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 280px" />
+        <img src="assets/work-21erie.jpg" width="960" height="640" loading="lazy" decoding="async" alt="SmartLabs at 21 Erie Street, Cambridge: modular lab benching" />
+      </picture>
       <div class="work-meta"><h3>21 Erie Street</h3><p class="work-fact">Cambridge, MA · 52,000 sf</p></div>
     </article>
     <article class="work-card">
-      <img src="assets/work-6tide.jpg" width="960" height="640" loading="lazy" alt="SmartLabs at 6 Tide Street, Boston: laboratory" />
+      <picture>
+        <source type="image/webp" srcset="assets/work-6tide-640.webp 640w, assets/work-6tide-960.webp 960w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 280px" />
+        <img src="assets/work-6tide.jpg" width="960" height="640" loading="lazy" decoding="async" alt="SmartLabs at 6 Tide Street, Boston: laboratory" />
+      </picture>
       <div class="work-meta"><h3>6 Tide Street</h3><p class="work-fact">Boston, MA · 72,000 sf</p></div>
     </article>
     <article class="work-card">
-      <img src="assets/work-2tower.jpg" width="960" height="640" loading="lazy" alt="SmartLabs at 2 Tower Place, South San Francisco: café with Bay views" />
+      <picture>
+        <source type="image/webp" srcset="assets/work-2tower-640.webp 640w, assets/work-2tower-960.webp 960w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 280px" />
+        <img src="assets/work-2tower.jpg" width="960" height="640" loading="lazy" decoding="async" alt="SmartLabs at 2 Tower Place, South San Francisco: café with Bay views" />
+      </picture>
       <div class="work-meta"><h3>2 Tower Place</h3><p class="work-fact">South San Francisco, CA · 78,000 sf</p></div>
     </article>
   </div>
@@ -423,15 +459,24 @@
 
   <p class="work-sub">Engineered, not improvised</p>
   <div class="diagram-row">
-    <img src="assets/diagram-massing.jpg" width="822" height="640" loading="lazy" alt="Architectural massing model of a curved lab floorplate" />
-    <img src="assets/diagram-mep.jpg" width="1280" height="524" loading="lazy" alt="MEP / BIM coordination model woven through lab floors" />
+    <picture>
+      <source type="image/webp" srcset="assets/diagram-massing-822.webp 822w" sizes="(max-width:560px) 100vw, (max-width:1200px) 50vw, 560px" />
+      <img src="assets/diagram-massing.jpg" width="822" height="640" loading="lazy" decoding="async" alt="Architectural massing model of a curved lab floorplate" />
+    </picture>
+    <picture>
+      <source type="image/webp" srcset="assets/diagram-mep-640.webp 640w, assets/diagram-mep-1280.webp 1280w" sizes="(max-width:560px) 100vw, (max-width:1200px) 50vw, 560px" />
+      <img src="assets/diagram-mep.jpg" width="1280" height="524" loading="lazy" decoding="async" alt="MEP / BIM coordination model woven through lab floors" />
+    </picture>
   </div>
   <p class="work-credit">Design coordination and BIM models: the kind of engineering rigor behind every space we deliver.</p>
 </section>
 
 <!-- ============ FACILITY BAND ============ -->
 <div class="facility-band">
-  <img src="assets/band-facility.jpg" width="960" height="640" loading="lazy" alt="Enterprise-grade laboratory space" />
+  <picture>
+    <source type="image/webp" srcset="assets/band-facility-640.webp 640w, assets/band-facility-960.webp 960w" sizes="100vw" />
+    <img src="assets/band-facility.jpg" width="960" height="640" loading="lazy" decoding="async" alt="Enterprise-grade laboratory space" />
+  </picture>
   <p class="facility-caption">The work, in the end, is the room: enterprise-grade space, built to be shared.</p>
 </div>
 
@@ -445,7 +490,7 @@
     <div class="founder-media">
       <picture class="founder-photo">
         <source type="image/webp" srcset="assets/amrit-headshot.webp" />
-        <img src="assets/amrit-headshot.jpg" width="1000" height="750" alt="Amrit Chaudhuri, Founder and Managing Partner of Kaliper" />
+        <img src="assets/amrit-headshot.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Amrit Chaudhuri, Founder and Managing Partner of Kaliper" />
       </picture>
     </div>
     <div class="founder-text">
@@ -501,7 +546,14 @@
   </div>
 
   <p class="exp-kicker">A few of the names</p>
-  <div class="marquee"><div class="track" id="expTrack"></div></div>
+  <div class="marquee"><div class="track" id="expTrack">
+    <span class="chip">AbbVie</span><span class="chip">Amgen</span><span class="chip">AstraZeneca</span><span class="chip">Bristol Myers Squibb</span><span class="chip">Eli Lilly</span><span class="chip">Johnson &amp; Johnson</span><span class="chip">Merck &amp; Co.</span><span class="chip">Moderna</span><span class="chip">Novo Nordisk</span><span class="chip">Pfizer</span><span class="chip">Roche</span><span class="chip">Sanofi</span><span class="chip">Takeda</span><span class="chip">Vertex</span><span class="chip">CRISPR Therapeutics</span><span class="chip">Beam Therapeutics</span><span class="chip">Ginkgo Bioworks</span><span class="chip">Generate Biomedicines</span><span class="chip">Tessera Therapeutics</span><span class="chip">Harvard University</span><span class="chip">MIT</span><span class="chip">Stanford University</span><span class="chip">Broad Institute</span><span class="chip">Dana-Farber</span><span class="chip">Mass General Hospital</span><span class="chip">Thermo Fisher</span><span class="chip">Charles River Laboratories</span>
+    <span class="chip" aria-hidden="true">AbbVie</span><span class="chip" aria-hidden="true">Amgen</span><span class="chip" aria-hidden="true">AstraZeneca</span><span class="chip" aria-hidden="true">Bristol Myers Squibb</span><span class="chip" aria-hidden="true">Eli Lilly</span><span class="chip" aria-hidden="true">Johnson &amp; Johnson</span><span class="chip" aria-hidden="true">Merck &amp; Co.</span><span class="chip" aria-hidden="true">Moderna</span><span class="chip" aria-hidden="true">Novo Nordisk</span><span class="chip" aria-hidden="true">Pfizer</span><span class="chip" aria-hidden="true">Roche</span><span class="chip" aria-hidden="true">Sanofi</span><span class="chip" aria-hidden="true">Takeda</span><span class="chip" aria-hidden="true">Vertex</span><span class="chip" aria-hidden="true">CRISPR Therapeutics</span><span class="chip" aria-hidden="true">Beam Therapeutics</span><span class="chip" aria-hidden="true">Ginkgo Bioworks</span><span class="chip" aria-hidden="true">Generate Biomedicines</span><span class="chip" aria-hidden="true">Tessera Therapeutics</span><span class="chip" aria-hidden="true">Harvard University</span><span class="chip" aria-hidden="true">MIT</span><span class="chip" aria-hidden="true">Stanford University</span><span class="chip" aria-hidden="true">Broad Institute</span><span class="chip" aria-hidden="true">Dana-Farber</span><span class="chip" aria-hidden="true">Mass General Hospital</span><span class="chip" aria-hidden="true">Thermo Fisher</span><span class="chip" aria-hidden="true">Charles River Laboratories</span>
+  </div></div>
+
+  <!-- The full list is in the page so it can be read without JavaScript. It opens with the button below. -->
+  <details class="exp-dir" id="expDir">
+  <summary><span class="btn btn-ghost"><span class="when-closed">Show all <span id="expTotalBtn">208</span> organizations</span><span class="when-open">Hide the full list</span></span></summary>
 
   <div class="exp-dir-head">
     <h3>The full list</h3>
@@ -521,9 +573,227 @@
     </div>
   </div>
 
-  <div class="exp-count" id="expCount"></div>
-  <div id="expResults"></div>
+  <div class="exp-count" id="expCount">Showing <b>208</b> of <b>208</b> organizations · all categories</div>
+  <div id="expResults">
+    <div class="exp-group" data-cat="Pharma"><h4>Pharmaceutical<span class="gc">22</span></h4><ul class="orgs">
+      <li><span>AbbVie</span></li>
+      <li><span>Amgen</span></li>
+      <li><span>Astellas</span></li>
+      <li><span>AstraZeneca</span></li>
+      <li><span>Bayer</span></li>
+      <li><span>Biogen</span></li>
+      <li><span>Bristol Myers Squibb</span></li>
+      <li><span>Eli Lilly</span></li>
+      <li><span>EMD Serono</span></li>
+      <li><span>GSK</span></li>
+      <li><span>Hengrui</span></li>
+      <li><span>Johnson &amp; Johnson</span></li>
+      <li><span>Merck &amp; Co.</span></li>
+      <li><span>Mitsubishi Tanabe Pharma</span></li>
+      <li><span>Moderna</span></li>
+      <li><span>Novo Nordisk</span></li>
+      <li><span>Pfizer</span></li>
+      <li><span>Roche</span></li>
+      <li><span>Sanofi</span></li>
+      <li><span>Simcere</span></li>
+      <li><span>Takeda</span></li>
+      <li><span>Vertex</span></li>
+    </ul></div>
+    <div class="exp-group" data-cat="Biotech"><h4>Biotech<span class="gc">77</span></h4><ul class="orgs">
+      <li><span>ACTnano</span></li>
+      <li><span>Affinivax</span></li>
+      <li><span>Aktis Oncology</span></li>
+      <li><span>Alector</span></li>
+      <li><span>Allogene Therapeutics</span></li>
+      <li><span>Alloplex Biotherapeutics</span></li>
+      <li><span>Arrakis Therapeutics</span></li>
+      <li><span>ArsenalBio</span></li>
+      <li><span>Ascidian Therapeutics</span></li>
+      <li><span>Atalanta Therapeutics</span></li>
+      <li><span>Be Biopharma</span></li>
+      <li><span>Beam Therapeutics</span></li>
+      <li><span>BlueRock Therapeutics</span></li>
+      <li><span>C4 Therapeutics</span></li>
+      <li><span>Cellaria</span></li>
+      <li><span>Cellarity</span></li>
+      <li><span>CELLINK</span></li>
+      <li><span>Clade Therapeutics</span></li>
+      <li><span>Compass Therapeutics</span></li>
+      <li><span>CRISPR Therapeutics</span></li>
+      <li><span>Cue Biopharma</span></li>
+      <li><span>Cyclerion Therapeutics</span></li>
+      <li><span>Day Zero Diagnostics</span></li>
+      <li><span>EdiGene</span></li>
+      <li><span>Editas Medicine</span></li>
+      <li><span>Eikon Therapeutics</span></li>
+      <li><span>Entrada Therapeutics</span></li>
+      <li><span>Finch Therapeutics</span></li>
+      <li><span>Generate Biomedicines</span></li>
+      <li><span>Generation Bio</span></li>
+      <li><span>Ginkgo Bioworks</span></li>
+      <li><span>Graphite Bio</span></li>
+      <li><span>Gritstone bio</span></li>
+      <li><span>Guardian Therapeutics</span></li>
+      <li><span>HelixNano</span></li>
+      <li><span>Igenomix</span></li>
+      <li><span>Imagen Biopharma</span></li>
+      <li><span>Inkbit</span></li>
+      <li><span>Intergalactic</span></li>
+      <li><span>Jnana Therapeutics</span></li>
+      <li><span>Kernal Biologics</span></li>
+      <li><span>Kintai Therapeutics</span></li>
+      <li><span>Korro Bio</span></li>
+      <li><span>Kronos Bio</span></li>
+      <li><span>Mammoth Biosciences</span></li>
+      <li><span>Mariana Oncology</span></li>
+      <li><span>Metagenomi</span></li>
+      <li><span>Montai Therapeutics</span></li>
+      <li><span>Monte Rosa Therapeutics</span></li>
+      <li><span>NextRNA Therapeutics</span></li>
+      <li><span>Nkarta Therapeutics</span></li>
+      <li><span>Noetik</span></li>
+      <li><span>Obsidian Therapeutics</span></li>
+      <li><span>Odyssey Therapeutics</span></li>
+      <li><span>Oncorus</span></li>
+      <li><span>ORNA Therapeutics</span></li>
+      <li><span>Pandion Therapeutics</span></li>
+      <li><span>Parvus Therapeutics</span></li>
+      <li><span>Prime Medicine</span></li>
+      <li><span>Radius Health</span></li>
+      <li><span>Sana Biotechnology</span></li>
+      <li><span>Scorpion Therapeutics</span></li>
+      <li><span>Sensei Biotherapeutics</span></li>
+      <li><span>Senti Biosciences</span></li>
+      <li><span>Seres Therapeutics</span></li>
+      <li><span>Sherlock Biosciences</span></li>
+      <li><span>Solid Biosciences</span></li>
+      <li><span>Tango Therapeutics</span></li>
+      <li><span>TCR2 Therapeutics</span></li>
+      <li><span>Tessera Therapeutics</span></li>
+      <li><span>Verge Genomics</span></li>
+      <li><span>Verve Therapeutics</span></li>
+      <li><span>Vor Biopharma</span></li>
+      <li><span>WaveGuide</span></li>
+      <li><span>Xsphera Biosciences</span></li>
+      <li><span>Yumanity Therapeutics</span></li>
+      <li><span>Zymergen</span></li>
+    </ul></div>
+    <div class="exp-group" data-cat="Academic"><h4>Academic &amp; Research<span class="gc">99</span></h4><ul class="orgs">
+      <li><span>A*STAR</span><span class="loc">Singapore</span></li>
+      <li><span>Albert Einstein College of Medicine</span><span class="loc">NY, US</span></li>
+      <li><span>Arizona State University</span><span class="loc">AZ, US</span></li>
+      <li><span>Beth Israel Deaconess Medical Center</span><span class="loc">MA, US</span></li>
+      <li><span>Boston Children's Hospital</span><span class="loc">MA, US</span></li>
+      <li><span>Boston University</span><span class="loc">MA, US</span></li>
+      <li><span>Brandeis University</span><span class="loc">MA, US</span></li>
+      <li><span>Brigham and Women's Hospital</span><span class="loc">MA, US</span></li>
+      <li><span>Broad Institute of MIT and Harvard</span><span class="loc">MA, US</span></li>
+      <li><span>Brown University</span><span class="loc">RI, US</span></li>
+      <li><span>California Institute of Technology (Caltech)</span><span class="loc">CA, US</span></li>
+      <li><span>Case Western Reserve University</span><span class="loc">OH, US</span></li>
+      <li><span>Children's Hospital of Philadelphia (CHOP)</span><span class="loc">PA, US</span></li>
+      <li><span>Cleveland Clinic (Lerner Research Institute)</span><span class="loc">OH, US</span></li>
+      <li><span>Columbia University</span><span class="loc">NY, US</span></li>
+      <li><span>Cornell University</span><span class="loc">NY, US</span></li>
+      <li><span>Dana-Farber Cancer Institute</span><span class="loc">MA, US</span></li>
+      <li><span>Dartmouth College</span><span class="loc">NH, US</span></li>
+      <li><span>Drexel University</span><span class="loc">PA, US</span></li>
+      <li><span>Emory University</span><span class="loc">GA, US</span></li>
+      <li><span>Florida State University</span><span class="loc">FL, US</span></li>
+      <li><span>Francis Crick Institute</span><span class="loc">UK</span></li>
+      <li><span>Fred Hutchinson Cancer Center</span><span class="loc">WA, US</span></li>
+      <li><span>George Washington University</span><span class="loc">DC, US</span></li>
+      <li><span>Georgetown University</span><span class="loc">DC, US</span></li>
+      <li><span>Georgia Institute of Technology</span><span class="loc">GA, US</span></li>
+      <li><span>Harvard University</span><span class="loc">MA, US</span></li>
+      <li><span>Heidelberg University</span><span class="loc">Germany</span></li>
+      <li><span>Icahn School of Medicine at Mount Sinai</span><span class="loc">NY, US</span></li>
+      <li><span>Indiana University</span><span class="loc">IN, US</span></li>
+      <li><span>Institut Pasteur</span><span class="loc">France</span></li>
+      <li><span>Johns Hopkins University</span><span class="loc">MD, US</span></li>
+      <li><span>Joslin Diabetes Center</span><span class="loc">MA, US</span></li>
+      <li><span>La Jolla Institute for Immunology</span><span class="loc">CA, US</span></li>
+      <li><span>Massachusetts General Hospital</span><span class="loc">MA, US</span></li>
+      <li><span>Massachusetts Institute of Technology (MIT)</span><span class="loc">MA, US</span></li>
+      <li><span>Mayo Clinic</span><span class="loc">MN, US</span></li>
+      <li><span>McGill University</span><span class="loc">Canada</span></li>
+      <li><span>Medical University of South Carolina (MUSC)</span><span class="loc">SC, US</span></li>
+      <li><span>Memorial Sloan Kettering Cancer Center</span><span class="loc">NY, US</span></li>
+      <li><span>Michigan State University</span><span class="loc">MI, US</span></li>
+      <li><span>MRC Laboratory of Molecular Biology</span><span class="loc">UK</span></li>
+      <li><span>New York University (NYU)</span><span class="loc">NY, US</span></li>
+      <li><span>Northeastern University</span><span class="loc">MA, US</span></li>
+      <li><span>Northwestern University</span><span class="loc">IL, US</span></li>
+      <li><span>Pennsylvania State University</span><span class="loc">PA, US</span></li>
+      <li><span>Princeton University</span><span class="loc">NJ, US</span></li>
+      <li><span>Purdue University</span><span class="loc">IN, US</span></li>
+      <li><span>Rensselaer Polytechnic Institute</span><span class="loc">NY, US</span></li>
+      <li><span>Rice University</span><span class="loc">TX, US</span></li>
+      <li><span>Rockefeller University</span><span class="loc">NY, US</span></li>
+      <li><span>Rutgers University</span><span class="loc">NJ, US</span></li>
+      <li><span>Salk Institute for Biological Studies</span><span class="loc">CA, US</span></li>
+      <li><span>Sanford Burnham Prebys</span><span class="loc">CA, US</span></li>
+      <li><span>Scripps Research</span><span class="loc">CA, US</span></li>
+      <li><span>Stanford University</span><span class="loc">CA, US</span></li>
+      <li><span>Stony Brook University</span><span class="loc">NY, US</span></li>
+      <li><span>Syracuse University</span><span class="loc">NY, US</span></li>
+      <li><span>Temple University</span><span class="loc">PA, US</span></li>
+      <li><span>Texas A&amp;M University</span><span class="loc">TX, US</span></li>
+      <li><span>Tufts University</span><span class="loc">MA, US</span></li>
+      <li><span>UMass Chan Medical School</span><span class="loc">MA, US</span></li>
+      <li><span>University at Buffalo</span><span class="loc">NY, US</span></li>
+      <li><span>University College London (UCL)</span><span class="loc">UK</span></li>
+      <li><span>University of Arizona</span><span class="loc">AZ, US</span></li>
+      <li><span>University of Barcelona</span><span class="loc">Spain</span></li>
+      <li><span>University of California, Berkeley</span><span class="loc">CA, US</span></li>
+      <li><span>University of California, Los Angeles (UCLA)</span><span class="loc">CA, US</span></li>
+      <li><span>University of California, San Diego (UCSD)</span><span class="loc">CA, US</span></li>
+      <li><span>University of California, San Francisco (UCSF)</span><span class="loc">CA, US</span></li>
+      <li><span>University of Cambridge</span><span class="loc">UK</span></li>
+      <li><span>University of Chicago</span><span class="loc">IL, US</span></li>
+      <li><span>University of Cincinnati</span><span class="loc">OH, US</span></li>
+      <li><span>University of Colorado Boulder</span><span class="loc">CO, US</span></li>
+      <li><span>University of Delaware</span><span class="loc">DE, US</span></li>
+      <li><span>University of Florida</span><span class="loc">FL, US</span></li>
+      <li><span>University of Georgia</span><span class="loc">GA, US</span></li>
+      <li><span>University of Houston</span><span class="loc">TX, US</span></li>
+      <li><span>University of Iowa</span><span class="loc">IA, US</span></li>
+      <li><span>University of Maryland, Baltimore</span><span class="loc">MD, US</span></li>
+      <li><span>University of Michigan</span><span class="loc">MI, US</span></li>
+      <li><span>University of Minnesota</span><span class="loc">MN, US</span></li>
+      <li><span>University of North Carolina at Chapel Hill</span><span class="loc">NC, US</span></li>
+      <li><span>University of Notre Dame</span><span class="loc">IN, US</span></li>
+      <li><span>University of Oxford</span><span class="loc">UK</span></li>
+      <li><span>University of Pennsylvania</span><span class="loc">PA, US</span></li>
+      <li><span>University of Rochester</span><span class="loc">NY, US</span></li>
+      <li><span>University of Southern California (USC)</span><span class="loc">CA, US</span></li>
+      <li><span>University of Vermont</span><span class="loc">VT, US</span></li>
+      <li><span>University of Virginia</span><span class="loc">VA, US</span></li>
+      <li><span>University of Zurich</span><span class="loc">Switzerland</span></li>
+      <li><span>UT MD Anderson Cancer Center</span><span class="loc">TX, US</span></li>
+      <li><span>UT Southwestern Medical Center</span><span class="loc">TX, US</span></li>
+      <li><span>Vanderbilt University</span><span class="loc">TN, US</span></li>
+      <li><span>Virginia Tech</span><span class="loc">VA, US</span></li>
+      <li><span>Wake Forest University</span><span class="loc">NC, US</span></li>
+      <li><span>Washington University in St. Louis</span><span class="loc">MO, US</span></li>
+      <li><span>Whitehead Institute</span><span class="loc">MA, US</span></li>
+      <li><span>Yale University</span><span class="loc">CT, US</span></li>
+    </ul></div>
+    <div class="exp-group" data-cat="Service"><h4>Service Providers<span class="gc">10</span></h4><ul class="orgs">
+      <li><span>AmbioPharm</span></li>
+      <li><span>Charles River Laboratories</span></li>
+      <li><span>EMD Chemicals</span></li>
+      <li><span>GL Biochem</span></li>
+      <li><span>Millipore (MilliporeSigma)</span></li>
+      <li><span>New England Biolabs</span></li>
+      <li><span>Nikon Instruments</span></li>
+      <li><span>Sartorius</span></li>
+      <li><span>Thermo Fisher</span></li>
+      <li><span>VWR</span></li>
+    </ul></div>
+  </div>
   <div class="exp-empty" id="expEmpty">No organizations match that search.</div>
+  </details>
 
   <p class="exp-note">
     <strong>A note on this list.</strong> These are organizations our founder worked with personally,

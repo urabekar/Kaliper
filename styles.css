@@ -4,6 +4,11 @@
    Display: Fraunces (serif).  Body: Inter.
    ============================================================ */
 
+/* Self-hosted variable fonts (woff2, latin subset). font-display:swap avoids invisible text on load. */
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(assets/fonts/inter-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"Lora";font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/lora-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"Lora";font-style:italic;font-weight:400 700;font-display:swap;src:url(assets/fonts/lora-latin-wght-italic.woff2) format("woff2")}
+
 :root{
   /* core */
   --navy:#102433;          /* base ink, echoes amritchaudhuri.com #11243a */
@@ -112,17 +117,19 @@ section[id]{scroll-margin-top:76px}
 /* ---------- hero ---------- */
 .hero{
   position:relative;
-  background:
-    linear-gradient(150deg,rgba(10,24,36,.95) 0%,rgba(16,36,51,.86) 55%,rgba(22,50,74,.78) 100%),
-    url('assets/hero-facility.jpg');
-  background-size:cover;
-  background-position:center;
+  isolation:isolate;
+  background:var(--navy-deep);
   color:#eef3f7;
   padding:172px var(--pad) 96px;
   overflow:hidden;
 }
+/* The hero photo is an <img> so the browser can size it and load it first. The gradient sits on top of it. */
+.hero-bg{display:block;position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(150deg,rgba(10,24,36,.95) 0%,rgba(16,36,51,.86) 55%,rgba(22,50,74,.78) 100%)}
 .hero-grid{
-  position:absolute;inset:0;
+  position:absolute;inset:0;z-index:1;
   background-image:
     linear-gradient(rgba(227,184,121,.16) 1px,transparent 1px),
     linear-gradient(90deg,rgba(227,184,121,.16) 1px,transparent 1px);
@@ -130,7 +137,7 @@ section[id]{scroll-margin-top:76px}
   mask-image:radial-gradient(ellipse 75% 75% at 78% 22%,#000 25%,transparent 78%);
   -webkit-mask-image:radial-gradient(ellipse 75% 75% at 78% 22%,#000 25%,transparent 78%);
 }
-.hero-inner{position:relative;max-width:var(--maxw);margin:0 auto}
+.hero-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto}
 .hero-title{
   font-family:var(--display);font-weight:600;
   font-size:clamp(2.3rem,5.4vw,4.4rem);line-height:1.04;letter-spacing:-.015em;
@@ -185,11 +192,13 @@ section[id]{scroll-margin-top:76px}
 .sector{
   position:relative;min-height:300px;display:flex;align-items:flex-end;
   padding:26px;border-radius:3px;overflow:hidden;
-  background:var(--navy-deep) center/cover no-repeat;
+  background:var(--navy-deep);
 }
-.sector::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,24,36,.22) 0%,rgba(8,18,28,.45) 45%,rgba(8,18,28,.92) 100%);transition:opacity .3s ease}
+.sector-bg{display:block;position:absolute;inset:0;z-index:0}
+.sector-bg img{width:100%;height:100%;object-fit:cover}
+.sector::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,24,36,.22) 0%,rgba(8,18,28,.45) 45%,rgba(8,18,28,.92) 100%);transition:opacity .3s ease}
 .sector:hover::before{opacity:.85}
-.sector-body{position:relative;z-index:1}
+.sector-body{position:relative;z-index:2}
 .sector h3{font-size:1.3rem;margin-bottom:8px;color:#fff}
 .sector p{color:#d7e0e8;font-size:.92rem}
 
@@ -213,6 +222,7 @@ section[id]{scroll-margin-top:76px}
 /* ---------- work / proven at scale ---------- */
 .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
 .work-card{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:3px;background:var(--navy-deep)}
+.work-card picture{display:block;width:100%;height:100%}
 .work-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .work-card:hover img{transform:scale(1.05)}
 .work-meta{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px;background:linear-gradient(transparent,rgba(8,18,28,.9))}
@@ -224,6 +234,7 @@ section[id]{scroll-margin-top:76px}
 .work-credit{font-size:.78rem;color:#7e90a1;margin-top:4px}
 .work-sub{font-family:var(--body);text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;font-weight:700;color:var(--gold);margin:38px 0 16px}
 .diagram-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.diagram-row picture{display:block;min-width:0}
 .diagram-row img{width:100%;height:clamp(200px,26vw,320px);object-fit:contain;background:#f4f2ec;border-radius:3px;padding:16px}
 .engagements{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,32px);margin-bottom:8px}
 .engagement{border-top:2px solid var(--gold);padding-top:20px}
@@ -241,6 +252,7 @@ section[id]{scroll-margin-top:76px}
 
 /* ---------- facility band ---------- */
 .facility-band{position:relative;max-width:none;background:var(--navy-deep)}
+.facility-band picture{display:block}
 .facility-band img{width:100%;height:clamp(280px,44vw,540px);object-fit:cover;object-position:center 58%;display:block;opacity:.92}
 .facility-band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,24,36,.15),rgba(10,24,36,.55))}
 .facility-caption{
@@ -304,7 +316,12 @@ section[id]{scroll-margin-top:76px}
 @keyframes exp-scroll{to{transform:translateX(-50%)}}
 .chip{font-family:var(--display);font-weight:500;font-size:1.12rem;color:var(--navy);padding:0 30px;white-space:nowrap;opacity:.8;border-right:1px solid var(--line);display:flex;align-items:center;height:54px}
 
-.exp-dir-head{margin-top:60px}
+.exp-dir{margin-top:44px}
+.exp-dir summary{display:block;list-style:none;cursor:pointer;text-align:center}
+.exp-dir summary::-webkit-details-marker{display:none}
+.exp-dir summary:focus-visible{outline:2px solid var(--bronze);outline-offset:6px;border-radius:2px}
+.exp-dir[open] .when-closed,.exp-dir:not([open]) .when-open{display:none}
+.exp-dir-head{margin-top:48px}
 .exp-dir-head h3{font-family:var(--display);font-weight:600;font-size:clamp(1.4rem,2.4vw,2rem);color:var(--navy)}
 .exp-dir-head p{color:var(--navy-soft);font-size:.95rem;margin-top:8px}
 .exp-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:26px 0 6px}
@@ -324,6 +341,7 @@ section[id]{scroll-margin-top:76px}
 .orgs{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px;margin:4px 0 38px}
 .orgs li{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:11px 2px;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--navy)}
 .orgs li .loc{font-size:.72rem;color:var(--navy-soft);white-space:nowrap}
+.orgs li[hidden],.exp-group[hidden]{display:none}
 .exp-empty{display:none;color:var(--navy-soft);padding:40px 0}
 .exp-note{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:22px 24px;margin-top:36px;font-size:.85rem;color:var(--navy-soft);max-width:80ch}
 .exp-note strong{color:var(--navy)}
