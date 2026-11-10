@@ -11,6 +11,8 @@ A single-page, static site (HTML/CSS/JS) for Kaliper. No build step, no dependen
 
 ## Files
 - `index.html`: all content and sections, including the full organization list (edit the list here).
+- `privacy.html`: the privacy notice, linked under the contact form and in the footer. It names the same contact address as the form.
+- `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `favicon-512.png`: site icons, made from the "K" of the wordmark.
 - `styles.css` — design system.
 - `script.js`: sticky header, mobile nav, scroll reveal, and the filter and search for the organization list.
 - `_config.yml`: keeps this README out of the published site.
